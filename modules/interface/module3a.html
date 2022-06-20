@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class = content>
+        <div style="text-align: center; padding: 6%;">
+            <div class="card text-white bg-dark mb-3 voting-card">
+              <div class="card-header">ALGORITHM PROCESSING</div>
+              <div class="card-body">
+                <h3 class="card-title">Time to make a SYMPHONIC decision.</h3>
+                <h4 class="card-text">Let Dr.SYMPH come with us?</h4>
+                    <button id="cc-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('1')">Dr.SYMPH On Baord</button>
+                    <br>
+                    <br>
+                    <button id="tt-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('2')">Permission declined</button>
+              </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+       function castVote(choice) {
+            var element = document.getElementById("cc-btn");
+            element.onclick = "";
+            var element = document.getElementById("tt-btn");
+            element.onclick = "";
+            myVotingChannel3a.publish("vote", choice, (err) => {
+                console.log(choice);
+                console.log(err);
+            });
+            }
+        console.log("button pressed")
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 3a results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 3a will load here!</div>
+
+  <script>
+  myVotingChannel3a.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceSix++;
+      break;
+    case "2":
+      choiceSeven++;
+      break;
+    case "3":
+      choiceThree++;
+      break;
+    case "4":
+      choiceFour++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart3a"].setJSONData({
+    chart: {
+      caption: "Time to make a SYMPHONIC decision.",
+      subCaption: "Let Dr.SYMPH come with us?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "Dr.SYMPH On Board",
+        value: choiceSix,
+      },
+      {
+        label: "Permission Declined",
+        value: choiceSeven,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts3a = new FusionCharts(chartConfig3a);
+  fusioncharts3a.render();
+});
+      </script>
+
+  </body>
+</html>

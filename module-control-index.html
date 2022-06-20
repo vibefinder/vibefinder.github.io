@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <title>Module Controller</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <script lang="text/javascript" src="https://cdn.ably.io/lib/ably.min-1.js"></script>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div style="text-align: center; padding: 6%;">
+            <div class="card text-white bg-dark mb-3 voting-card">
+              <div class="card-header">Module Controller</div>
+              <div class="card-body">
+                <h5 class="card-title">Module Controller</h5>
+                    <button id="cc-btn" type="button" class="btn btn-light btn-vote-option" onclick="castStage('0')">Waiting room</button>
+                    <button id="tt-btn" type="button" class="btn btn-light btn-vote-option" onclick="castStage('1')">Module 1</button>
+                    <button id="mm-btn" type="button" class="btn btn-light btn-vote-option" onclick="castStage('2')">Module 2</button>
+                    <button id="gg-btn" type="button" class="btn btn-light btn-vote-option" onclick="castStage('3a')">Module 3a</button>
+                    <button id="gg-btn" type="button" class="btn btn-light btn-vote-option" onclick="castStage('3b')">Module 3b</button>
+              </div>
+            </div>
+        </div>
+    </body>
+    <script src="module-control-index.js" type="text/javascript"></script>
+</html>

@@ -1,0 +1,33 @@
+body {
+  background: lightgray;
+}
+
+.card-header {
+  font-size: 10vw;
+}
+
+.voting-card {
+  width: 100%;
+  display: inline-block;
+  font-family: tahoma;
+  margin-top: 20vw;
+}
+
+.btn-vote-option {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  width: 20%;
+  font-family: tahoma;
+}
+
+@media only screen and (max-device-width: 480px) {
+  .voting-card {
+    width: 90%;
+    display: inline-block;
+  }
+  .btn-vote-option {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    width: 80%;
+  }
+}

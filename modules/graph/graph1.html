@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 1 results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 1 will load here!</div>
+
+  <script>
+  myVotingChannel1.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceOne++;
+      break;
+    case "2":
+      choiceTwo++;
+      break;
+    case "3":
+      choiceThree++;
+      break;
+    case "4":
+      choiceFour++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart"].setJSONData({
+    chart: {
+      caption: "First Companion",
+      subCaption: "Should we help TONIC?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "Help TONIC",
+        value: choiceOne,
+      },
+      {
+        label: "Left TONIC",
+        value: choiceTwo,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts1 = new FusionCharts(chartConfig1);
+  fusioncharts1.render();
+});
+      </script>
+
+  </body>
+</html>

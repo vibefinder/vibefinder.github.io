@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 2 results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 2 will load here!</div>
+
+  <script>
+  myVotingChannel2.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceThree++;
+      break;
+    case "2":
+      choiceFour++;
+      break;
+    case "3":
+      choiceFive++;
+      break;
+    case "4":
+      choiceFour++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart2"].setJSONData({
+    chart: {
+      caption: "Which way to go",
+      subCaption: "Earth, Tau Ceti G, or High Frequency Zone?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "Earth",
+        value: choiceThree,
+      },
+      {
+        label: "Tau Ceti G",
+        value: choiceFour,
+      },
+      {
+        label: "High-Frequency Zone",
+        value: choiceFive,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts2 = new FusionCharts(chartConfig2);
+  fusioncharts2.render();
+});
+      </script>
+
+  </body>
+</html>

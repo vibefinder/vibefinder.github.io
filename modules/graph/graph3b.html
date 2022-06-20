@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 3b results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 3b will load here!</div>
+
+  <script>
+  myVotingChannel3b.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceEight++;
+      break;
+    case "2":
+      choiceNine++;
+      break;
+    case "3":
+      choiceThree++;
+      break;
+    case "4":
+      choiceFour++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart3b"].setJSONData({
+    chart: {
+      caption: "Time to make a SYNTHETIC decision.",
+      subCaption: "Let SYNTH come with us?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "SYNTH On Baord",
+        value: choiceEight,
+      },
+      {
+        label: "Permission Declined",
+        value: choiceNine,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts3b = new FusionCharts(chartConfig3b);
+  fusioncharts3b.render();
+});
+      </script>
+
+  </body>
+</html>
