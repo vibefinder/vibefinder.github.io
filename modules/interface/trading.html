@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 1</title>
+    <title>Module Trading</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,12 +14,12 @@
             <div class="card text-white bg-dark mb-3 voting-card">
               <div class="card-header">ALGORITHM PROCESSING</div>
               <div class="card-body">
-                <h3 class="card-title">เพื่อนร่วมทางคนแรก</h3>
-                <h4 class="card-text">เราควรช่วย TONIC หรือไม่?</h4>
-                    <button id="cc-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('1')">ช่วย TONIC</button>
+                <h3 class="card-title">Trading Game</h3>
+                <h4 class="card-text">ช้อนหรือปล่อย?</h4>
+                    <button id="cc-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('1')">ช้อน</button>
                     <br>
                     <br>
-                    <button id="tt-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('2')">ทิ้ง TONIC</button>
+                    <button id="tt-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('2')">ปล่อย</button>
               </div>
             </div>
         </div>
@@ -31,7 +31,7 @@
             element.onclick = "";
             var element = document.getElementById("tt-btn");
             element.onclick = "";
-            myVotingChannel1.publish("vote", choice, (err) => {
+            myVotingChannelBTC.publish("vote", choice, (err) => {
                 console.log(choice);
                 console.log(err);
             });

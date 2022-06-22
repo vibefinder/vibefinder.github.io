@@ -4,34 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 1</title>
+    <title>Module 2g-1</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
     <div class = content>
-        <div style="text-align: center; padding: 10%;">
+        <div style="text-align: center; padding: 6%;">
             <div class="card text-white bg-dark mb-3 voting-card">
               <div class="card-header">ALGORITHM PROCESSING</div>
               <div class="card-body">
-                <h3 class="card-title">เพื่อนร่วมทางคนแรก</h3>
-                <h4 class="card-text">เราควรช่วย TONIC หรือไม่?</h4>
-                    <button id="cc-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('1')">ช่วย TONIC</button>
+                <h3 class="card-title">การปลอบโยน</h3>
+                <h4 class="card-text">SOLO กำลังเศร้า ใครควรจะปลอบเขา?</h4>
+                    <button id="cc-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('1')">SYMPH</button>
                     <br>
                     <br>
-                    <button id="tt-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('2')">ทิ้ง TONIC</button>
+                    <button id="tt-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('2')">TONIC</button>
+                    <br>
+                    <br>
+                    <button id="bb-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('3')">ไม่เลือกใครเลย</button>
               </div>
             </div>
         </div>
     </div>
 
     <script>
-            function castVote(choice) {
+       function castVote(choice) {
             var element = document.getElementById("cc-btn");
             element.onclick = "";
             var element = document.getElementById("tt-btn");
             element.onclick = "";
-            myVotingChannel1.publish("vote", choice, (err) => {
+            var element = document.getElementById("bb-btn");
+            element.onclick = "";
+            myVotingChannel2g.publish("vote", choice, (err) => {
                 console.log(choice);
                 console.log(err);
             });
