@@ -6,12 +6,17 @@ const myVotingChannel1 = realtime.channels.get("voting-channel1");
 const myVotingChannel2 = realtime.channels.get("voting-channel2");
 const myVotingChannel3a = realtime.channels.get("voting-channel3a");
 const myVotingChannel3b = realtime.channels.get("voting-channel3b");
+const myVotingChannel2g = realtime.channels.get("voting-channel2g");
+const myVotingChannelBTC = realtime.channels.get("voting-BTC");
 
 let moduleZero = "waiting-room",
     moduleOne = "module1",
     moduleTwo = "module2",
-    moduleThreeA = "module3a";
-    moduleThreeB = "module3b";
+    moduleThreeA = "module3a",
+    moduleThreeB = "module3b",
+    moduleTwoGOne = "module2g-1",
+    moduleTwoGTwo = "module2g-2",
+    moduleTrading = "module-trading";
 
 let choiceOne = 0,
     choiceTwo = 0,
@@ -21,7 +26,16 @@ let choiceOne = 0,
     choiceSix = 0,
     choiceSeven = 0,
     choiceEight = 0,
-    choiceNine = 0;
+    choiceNine = 0,
+    choiceTen = 0,
+    choiceEleven = 0,
+    choiceTwelve = 0,
+    choiceThirteen = 0,
+    choiceFourteen = 0,
+    choiceFifteen = 0,
+
+    choiceBuy = 0,
+    choiceSell = 0;
 
 let currentModule = "";
 
@@ -153,6 +167,107 @@ data: chartData3b,
 },
 };
 
+// chart 2g.1
+// Preparing the chart data
+let chartData2gOne = [
+  {
+    label: "SYMPH",
+    value: choiceTen,
+  },
+  {
+    label: "TONIC",
+    value: choiceEleven,
+  },
+  {
+    label: "ไม่เลือกใครเลย",
+    value: choiceTwelve,
+  },
+];
+// Chart Configuration
+let chartConfig2gOne = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart2g.1",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "การปลอบโยน",
+  subCaption: "SOLO กำลังเศร้า ใครควรจะปลอบเขา?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData2gOne,
+},
+};
+
+// chart 2g.2
+// Preparing the chart data
+let chartData2gTwo = [
+  {
+    label: "SYNTH",
+    value: choiceThirteen,
+  },
+  {
+    label: "TONIC",
+    value: choiceFourteen,
+  },
+  {
+    label: "ไม่เลือกใครเลย",
+    value: choiceFifteen,
+  },
+];
+// Chart Configuration
+let chartConfig2gTwo = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart2g.2",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "การปลอบโยน",
+  subCaption: "SOLO กำลังเศร้า ใครควรจะปลอบเขา?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData2gTwo,
+},
+};
+
+// chart trading
+// Preparing the chart data
+let chartDataBTC = [
+  {
+    label: "ช้อน",
+    value: choiceBuy,
+  },
+  {
+    label: "ปล่อย",
+    value: choiceSell,
+  },
+];
+// Chart Configuration
+let chartConfigBTC = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chartBTC",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "การปลอบโยน",
+  subCaption: "SOLO กำลังเศร้า ใครควรจะปลอบเขา?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartDataBTC,
+},
+};
+
 // end
 
 stageChannel.subscribe("vote", (msg) => {
@@ -176,6 +291,18 @@ stageChannel.subscribe("vote", (msg) => {
     case "3b":
     currentModule = moduleThreeB
     $("#current-graph").load('./modules/graph/graph3b.html');
+    break;
+    case "2g.1":
+    currentModule = moduleTwoGOne
+    $("#current-graph").load('./modules/graph/graph2g-1.html');
+    break;
+    case "2g.2":
+    currentModule = moduleTwoGTwo
+    $("#current-graph").load('./modules/graph/graph2g-2.html');
+    break;
+    case "btc":
+    currentModule = moduleTrading
+    $("#current-graph").load('./modules/graph/trading.html');
     break;
   }
   console.log(currentModule);

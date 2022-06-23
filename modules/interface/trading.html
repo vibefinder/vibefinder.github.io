@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 3b</title>
+    <title>Module Trading</title>
     <link rel="stylesheet1" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet2" href="style.css" />
     <link rel="stylesheet3" href="https://fonts.googleapis.com/css?family=Kanit">
     <style>
         body {
-          background-color: #687296;
+          background-color: #68966e;
         }
 
         h1 {
@@ -22,11 +22,11 @@
         }
 
         h4 {
-        font-size: 22px;
+        font-size: 25px;
         }
 
         p {
-        font-size: 33px;
+        font-size: 40px;
         }
     </style>
 </head>
@@ -36,21 +36,20 @@
             
             <h1 style="color: #f5eced">ALGORITHM PROCESSING</h1>
             <br>
-            <h3 style="color: #f5eced">"a SYNTHETIC Decision"</h3>
-            <h4 style="color: #f5eced">ให้ SYNTH มาด้วยกันหรือไม่?</h4>
-            <br>
-            <p id="cc-btn" style="color: #87cdee" onclick="castVote('1')">ให้ SYNTH ขึ้นยาน</button>
-            <p id="tt-btn" style="color: #efaeae" onclick="castVote('2')">ปฎิเสธนักท่องอวกาศ</button>
+            <h3 style="color: #f5eced">"Trading Game"</h3>
+            <h4 style="color: #f5eced">ช้อนหรือปล่อย?</h4>
+            <p id="cc-btn" style="color: #2200ff" onclick="castVote('1')">ช้อน</button>
+            <p id="tt-btn" style="color: #ff0000" onclick="castVote('2')">ปล่อย</button>
         </div>
     </div>
 
     <script>
-       function castVote(choice) {
+            function castVote(choice) {
             var element = document.getElementById("cc-btn");
             element.onclick = "";
             var element = document.getElementById("tt-btn");
             element.onclick = "";
-            myVotingChannel3b.publish("vote", choice, (err) => {
+            myVotingChannelBTC.publish("vote", choice, (err) => {
                 console.log(choice);
                 console.log(err);
             });

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 2g-1 results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 2g-1 will load here!</div>
+
+  <script>
+  myVotingChannel2g.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceTen++;
+      break;
+    case "2":
+      choiceEleven++;
+      break;
+    case "3":
+      choiceTwelve++;
+      break;
+    case "4":
+      choiceFour++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart2g.1"].setJSONData({
+    chart: {
+      caption: "การปลอบโยน",
+      subCaption: "SOLO กำลังเศร้า ใครควรจะปลอบเขา?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "SYMPH",
+        value: choiceTen,
+      },
+      {
+        label: "TONIC",
+        value: choiceEleven,
+      },
+      {
+        label: "ไม่เลือกใครเลย",
+        value: choiceTwelve,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts2gOne = new FusionCharts(chartConfig2gOne);
+  fusioncharts2gOne.render();
+});
+      </script>
+
+  </body>
+</html>

@@ -1,5 +1,10 @@
 body {
-  background: lightgray;
+  background: rgb(0, 0, 0);
+  color: white;
+}
+
+text {
+  color: white;
 }
 
 .card-header {

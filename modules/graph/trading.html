@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module Trading</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph Trade will load here!</div>
+
+  <script>
+  myVotingChannelBTC.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceBuy++;
+      break;
+    case "2":
+      choiceSell++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chartBTC"].setJSONData({
+    chart: {
+      caption: "Trading Game",
+      subCaption: "ช้อนหรือปล่อย?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "ช้อน",
+        value: choiceBuy,
+      },
+      {
+        label: "ปล่อย",
+        value: choiceSell,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusionchartsBTC = new FusionCharts(chartConfigBTC);
+  fusionchartsBTC.render();
+});
+      </script>
+
+  </body>
+</html>
