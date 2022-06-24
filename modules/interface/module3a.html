@@ -8,6 +8,7 @@
     <link rel="stylesheet1" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet2" href="style.css" />
     <link rel="stylesheet3" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
         body {
           background-color: #687296;
@@ -15,19 +16,35 @@
 
         h1 {
         font-size: 30px;
+        font-family: Kanit, sans-serif;
         }
 
         h3 {
         font-size: 25px;
+        font-family: Kanit, sans-serif;
         }
 
         h4 {
-        font-size: 22px;
+        font-size: 20px;
+        font-family: Kanit, sans-serif;
         }
 
         p {
         font-size: 35px;
         }
+
+        .w3-button {
+        border: white;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        background-color: #87cdee00;
+        font-family: kanit, sans-serif;
+        text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke;
+        }
+
+        .w3-button1{ color: #87cdee;}
+        .w3-button2{ color: #efaeae;font-size: 35px;}
     </style>
 </head>
 <body>
@@ -38,8 +55,11 @@
             <br>
             <h3 style="color: #f5eced">"a SYMPHONIC Decision"</h3>
             <h4 style="color: #f5eced">ให้ Dr.SYMPH มาด้วยกันหรือไม่?</h4>
-            <p id="cc-btn" style="color: #87cdee" onclick="castVote('1')">Dr.SYMPH ขึ้นยาน</button>
-            <p id="tt-btn" style="color: #efaeae" onclick="castVote('2')">ปฎิเสธนักวิชาการ</button>
+            <br>
+            <button id="cc-btn" type="button" class="w3-button w3-button1 w3-border w3-round-large w3-ripple" onclick="castVote('1')">Dr.SYMPH ขึ้นยาน</button>
+            <br>
+            <br>
+            <button id="tt-btn" type="button" class="w3-button w3-button2 w3-border w3-round-large w3-ripple" onclick="castVote('2')">ปฎิเสธนักวิชาการ</button>
         </div>
     </div>
 
