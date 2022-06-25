@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 2e results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 2e will load here!</div>
+
+  <script>
+  myVotingChannel2e.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+     choiceTwenty++;
+      break;
+    case "2":
+     choiceTwentyOne++;
+      break;
+    case "3":
+      choiceFive++;
+      break;
+    case "4":
+      choiceFour++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart2e"].setJSONData({
+    chart: {
+      caption: "Defeated?",
+      subCaption: "เราแพ้แล้ว ทำยังไงดี?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "ตรงไปที่รูหนอน",
+        value: choiceTwenty,
+      },
+      {
+        label: "ยอมจำนนต่อนายพล CLEF",
+        value: choiceTwentyOne,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts2e = new FusionCharts(chartConfig2e);
+  fusioncharts2e.render();
+});
+      </script>
+
+  </body>
+</html>

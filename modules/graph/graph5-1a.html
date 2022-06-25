@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 5.1a results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 5.1a will load here!</div>
+
+  <script>
+  myVotingChannel5.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceTwentyFour++;
+      break;
+    case "2":
+      choiceTwentyFive++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart5.1a"].setJSONData({
+    chart: {
+      caption: "Terminal",
+      subCaption: "ให้ Dr. SYMPH ลงไปสำรวจดาวหรือไม่?",
+      theme: "fusion",
+    },
+    data: [
+    {
+    label: "Dr.SYMPH สำรวจ",
+    value: choiceTwentyFour,
+  },
+  {
+    label: "Dr.SYMPH อยู่บนยาน",
+    value: choiceTwentyFive,
+  },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts51a = new FusionCharts(chartConfig51a);
+  fusioncharts51a.render();
+});
+      </script>
+
+  </body>
+</html>

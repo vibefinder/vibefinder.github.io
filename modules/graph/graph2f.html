@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 2f results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 1 will load here!</div>
+
+  <script>
+  myVotingChannel2f.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceTwentyTwo++;
+      break;
+    case "2":
+      choiceTwentyThree++;
+      break;
+    case "3":
+      choiceThree++;
+      break;
+    case "4":
+      choiceFour++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart2f"].setJSONData({
+    chart: {
+      caption: "Savior",
+      subCaption: "รับ TONIC ขึ้น Launch ดีหรือไม่?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "รับ TONIC",
+        value: choiceTwentyTwo,
+      },
+      {
+        label: "ไม่รับ TONIC",
+        value: choiceTwentyThree,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts2f = new FusionCharts(chartConfig2f);
+  fusioncharts2f.render();
+});
+      </script>
+
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 5.2b results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 5.2b will load here!</div>
+
+  <script>
+  myVotingChannel5.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+    choiceTwentyEight++;
+      break;
+    case "2":
+    choiceTwentyNine++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart5.2b"].setJSONData({
+    chart: {
+      caption: "Confrontation",
+      subCaption: "เปิด Aerial Portal ให้ TONIC หรือไม่?",
+      theme: "fusion",
+    },
+    data: [
+        {
+        label: "เปิด Aerial Portal",
+        value: choiceTwentyEight,
+        },
+        {
+        label: "ล็อค Aerial Portal",
+        value: choiceTwentyNine,
+        },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts52b = new FusionCharts(chartConfig52b);
+  fusioncharts52b.render();
+});
+      </script>
+
+  </body>
+</html>
