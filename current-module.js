@@ -7,6 +7,10 @@ const myVotingChannel2 = realtime.channels.get("voting-channel2");
 const myVotingChannel3a = realtime.channels.get("voting-channel3a");
 const myVotingChannel3b = realtime.channels.get("voting-channel3b");
 const myVotingChannel2g = realtime.channels.get("voting-channel2g");
+const myVotingChannel2d = realtime.channels.get("voting-channel2d");
+const myVotingChannel2e = realtime.channels.get("voting-channel2e");
+const myVotingChannel2f = realtime.channels.get("voting-channel2f");
+const myVotingChannel5 = realtime.channels.get("voting-channel5");
 const myVotingChannelBTC = realtime.channels.get("voting-BTC");
 
 // var events = require('events');
@@ -19,6 +23,13 @@ let moduleZero = "waiting-room",
     moduleThreeB = "module3b",
     moduleTwoGOne = "module2g-1",
     moduleTwoGTwo = "module2g-2",
+    moduleTwoDSymph = "module2d-symph",
+    moduleTwoDSynth = "module2d-synth",
+    moduleTwoE = "module2e",
+    moduleTwoF = "module2f",
+    moduleFiveOneA = "module5.1a",
+    moduleFiveOneB = "module5.1b",
+    moduleFiveTwoB = "module5.2b",
     moduleTrading = "module-trading";
 
 // let currentHTML = require('./modules/interface/module1.html');
@@ -65,6 +76,51 @@ stageChannel.subscribe("vote", (msg) => {
     case "btc":
     currentModule = moduleTrading
     $("#current-module").load('./modules/interface/trading.html');
+    break;
+
+    case "2d-symph":
+    currentModule = moduleTwoDSymph
+    $("#current-module").load('./modules/interface/module2d-symph.html');
+    break;
+
+    case "2d-synth":
+    currentModule = moduleTwoDSynth
+    $("#current-module").load('./modules/interface/module2d-synth.html');
+    break;
+
+    case "2e":
+    currentModule = moduleTwoE
+    $("#current-module").load('./modules/interface/module2e.html');
+    break;
+
+    case "2f":
+    currentModule = moduleTwoF
+    $("#current-module").load('./modules/interface/module2f.html');
+    break;
+
+    case "5.1aSymph":
+    currentModule = moduleFiveOneA
+    $("#current-module").load('./modules/interface/module5-1aSymph.html');
+    break;
+
+    case "5.1bSymph":
+    currentModule = moduleFiveOneB
+    $("#current-module").load('./modules/interface/module5-1bSymph.html');
+    break;
+
+    case "5.1aSynth":
+    currentModule = moduleFiveOneA
+    $("#current-module").load('./modules/interface/module5-1aSynth.html');
+    break;
+
+    case "5.1bSynth":
+    currentModule = moduleFiveOneB
+    $("#current-module").load('./modules/interface/module5-1bSynth.html');
+    break;
+
+    case "5.2b":
+    currentModule = moduleFiveTwoB
+    $("#current-module").load('./modules/interface/module5-2b.html');
     break;
   }
   console.log(currentModule);

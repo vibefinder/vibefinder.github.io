@@ -7,6 +7,10 @@ const myVotingChannel2 = realtime.channels.get("voting-channel2");
 const myVotingChannel3a = realtime.channels.get("voting-channel3a");
 const myVotingChannel3b = realtime.channels.get("voting-channel3b");
 const myVotingChannel2g = realtime.channels.get("voting-channel2g");
+const myVotingChannel2d = realtime.channels.get("voting-channel2d");
+const myVotingChannel2e = realtime.channels.get("voting-channel2e");
+const myVotingChannel2f = realtime.channels.get("voting-channel2f");
+const myVotingChannel5 = realtime.channels.get("voting-channel5");
 const myVotingChannelBTC = realtime.channels.get("voting-BTC");
 
 let moduleZero = "waiting-room",
@@ -16,6 +20,13 @@ let moduleZero = "waiting-room",
     moduleThreeB = "module3b",
     moduleTwoGOne = "module2g-1",
     moduleTwoGTwo = "module2g-2",
+    moduleTwoDSymph = "module2d-symph",
+    moduleTwoDSynth = "module2d-synth",
+    moduleTwoE = "module2e",
+    moduleTwoF = "module2f",
+    moduleFiveOneA = "module5.1a",
+    moduleFiveOneB = "module5.1b",
+    moduleFiveTwoB = "module5.2b",
     moduleTrading = "module-trading";
 
 let choiceOne = 0,
@@ -33,6 +44,20 @@ let choiceOne = 0,
     choiceThirteen = 0,
     choiceFourteen = 0,
     choiceFifteen = 0,
+    choiceSixteen = 0,
+    choiceSeventeen = 0,
+    choiceEighteen = 0,
+    choiceNineteen = 0,
+    choiceTwenty = 0,
+    choiceTwentyOne = 0,
+    choiceTwentyTwo = 0,
+    choiceTwentyThree = 0,
+    choiceTwentyFour = 0,
+    choiceTwentyFive = 0,
+    choiceTwentySix = 0,
+    choiceTwentySeven = 0,
+    choiceTwentyEight = 0,
+    choiceTwentyNine = 0,
 
     choiceBuy = 0,
     choiceSell = 0;
@@ -268,6 +293,200 @@ data: chartDataBTC,
 },
 };
 
+// chart 2d
+// Preparing the chart data
+let chartData2d = [
+  {
+    label: "TERMINAL P-89",
+    value: choiceSixteen,
+  },
+  {
+    label: "ELYSIUM IX/XI",
+    value: choiceSeventeen,
+  },
+  {
+    label: "เดินทางผ่านรูหนอน",
+    value: choiceEighteen,
+  },
+  {
+    label: "High-Frequency Zone",
+    value: choiceNineteen,
+  },
+];
+// Chart Configuration
+let chartConfig2d = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart2d",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "ชัยชนะชั่วครู่",
+  subCaption: "ไปไหนต่อ?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData2d,
+},
+};
+
+// chart 2e
+// Preparing the chart data
+let chartData2e = [
+  {
+    label: "ตรงไปที่รูหนอน",
+    value: choiceTwenty,
+  },
+  {
+    label: "ยอมจำนนต่อนายพล CLEF",
+    value: choiceTwentyOne,
+  },
+];
+// Chart Configuration
+let chartConfig2e = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart2e",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Defeated?",
+  subCaption: "เราแพ้แล้ว ทำยังไงดี?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData2e,
+},
+};
+
+// chart 2f
+// Preparing the chart data
+let chartData2f = [
+  {
+    label: "รับ TONIC",
+    value: choiceTwentyTwo,
+  },
+  {
+    label: "ไม่รับ TONIC",
+    value: choiceTwentyThree,
+  },
+];
+// Chart Configuration
+let chartConfig2f = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart2f",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Savior",
+  subCaption: "รับ TONIC ขึ้น Launch ดีหรือไม่?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData2f,
+},
+};
+
+// chart 5.1a
+// Preparing the chart data
+let chartData51a = [
+  {
+    label: "Dr.SYMPH/SYNTH สำรวจ",
+    value: choiceTwentyFour,
+  },
+  {
+    label: "Dr.SYMPH/SYNTH อยู่บนยาน",
+    value: choiceTwentyFive,
+  },
+];
+// Chart Configuration
+let chartConfig51a = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart5.1a",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Terminal",
+  subCaption: "ให้ Dr. SYMPH/SYNTH ลงไปสำรวจดาวหรือไม่?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData51a,
+},
+};
+
+// chart 5.1b
+// Preparing the chart data
+let chartData51b = [
+  {
+    label: "Dr.SYMPH/SYNTH",
+    value: choiceTwentySix,
+  },
+  {
+    label: "TONIC",
+    value: choiceTwentySeven,
+  },
+];
+// Chart Configuration
+let chartConfig51b = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart5.1b",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Terminal",
+  subCaption: "ให้ใครลงไปสำรวจดาวหรือไม่?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData51b,
+},
+};
+
+// chart 5.2b
+// Preparing the chart data
+let chartData52b = [
+  {
+    label: "เปิด Aerial Portal",
+    value: choiceTwentyEight,
+  },
+  {
+    label: "ล็อค Aerial Portal",
+    value: choiceTwentyNine,
+  },
+];
+// Chart Configuration
+let chartConfig52b = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart5.2b",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Confrontation",
+  subCaption: "เปิด Aerial Portal ให้ TONIC หรือไม่?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData52b,
+},
+};
+
 // end
 
 stageChannel.subscribe("vote", (msg) => {
@@ -303,6 +522,42 @@ stageChannel.subscribe("vote", (msg) => {
     case "btc":
     currentModule = moduleTrading
     $("#current-graph").load('./modules/graph/trading.html');
+    break;
+    case "2d-symph":
+    currentModule = moduleTwoDSymph
+    $("#current-graph").load('./modules/graph/graph2d.html');
+    break;
+    case "2d-synth":
+    currentModule = moduleTwoDSynth
+    $("#current-graph").load('./modules/graph/graph2d.html');
+    break;
+    case "2e":
+    currentModule = moduleTwoE
+    $("#current-graph").load('./modules/graph/graph2e.html');
+    break;
+    case "2f":
+    currentModule = moduleTwoF
+    $("#current-graph").load('./modules/graph/graph2f.html');
+    break;
+    case "5.1aSymph":
+    currentModule = moduleFiveOneA
+    $("#current-graph").load('./modules/graph/graph5-1a.html');
+    break;
+    case "5.1bSymph":
+    currentModule = moduleFiveOneB
+    $("#current-graph").load('./modules/graph/graph5-1b.html');
+    break;
+    case "5.1aSynth":
+    currentModule = moduleFiveOneA
+    $("#current-graph").load('./modules/graph/graph5-1a.html');
+    break;
+    case "5.1bSynth":
+    currentModule = moduleFiveOneB
+    $("#current-graph").load('./modules/graph/graph5-1b.html');
+    break;
+    case "5.2b":
+    currentModule = moduleFiveTwoB
+    $("#current-graph").load('./modules/graph/graph5-2b.html');
     break;
   }
   console.log(currentModule);

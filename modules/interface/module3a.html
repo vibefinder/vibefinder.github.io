@@ -5,23 +5,61 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module 3a</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet1" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet2" href="style.css" />
+    <link rel="stylesheet3" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+          background-color: #687296;
+        }
+
+        h1 {
+        font-size: 30px;
+        font-family: Kanit, sans-serif;
+        }
+
+        h3 {
+        font-size: 25px;
+        font-family: Kanit, sans-serif;
+        }
+
+        h4 {
+        font-size: 20px;
+        font-family: Kanit, sans-serif;
+        }
+
+        p {
+        font-size: 35px;
+        }
+
+        .w3-button {
+        border: white;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        background-color: #87cdee00;
+        font-family: kanit, sans-serif;
+        text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke;
+        }
+
+        .w3-button1{ color: #87cdee;}
+        .w3-button2{ color: #efaeae;font-size: 35px;}
+    </style>
 </head>
 <body>
     <div class = content>
-        <div style="text-align: center; padding: 6%;">
-            <div class="card text-white bg-dark mb-3 voting-card">
-              <div class="card-header">ALGORITHM PROCESSING</div>
-              <div class="card-body">
-                <h3 class="card-title">Time to make a SYMPHONIC decision.</h3>
-                <h4 class="card-text">ให้ Dr.SYMPH มาด้วยกันหรือไม่?</h4>
-                    <button id="cc-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('1')">Dr.SYMPH ขึ้นยาน</button>
-                    <br>
-                    <br>
-                    <button id="tt-btn" type="button" class="btn btn-light btn-vote-option" onclick="castVote('2')">ปฎิเสธนักวิชาการ</button>
-              </div>
-            </div>
+        <div style="text-align: center; padding: 10%; font-family: kanit, sans-serif; text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke">
+            
+            <h1 style="color: #f5eced">ALGORITHM PROCESSING</h1>
+            <br>
+            <h3 style="color: #f5eced">"a SYMPHONIC Decision"</h3>
+            <h4 style="color: #f5eced">ให้ Dr.SYMPH มาด้วยกันหรือไม่?</h4>
+            <br>
+            <button id="cc-btn" type="button" class="w3-button w3-button1 w3-border w3-round-large w3-ripple" onclick="castVote('1')">Dr.SYMPH ขึ้นยาน</button>
+            <br>
+            <br>
+            <button id="tt-btn" type="button" class="w3-button w3-button2 w3-border w3-round-large w3-ripple" onclick="castVote('2')">ปฎิเสธนักวิชาการ</button>
         </div>
     </div>
 

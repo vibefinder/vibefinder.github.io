@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 2g-1 results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 2d will load here!</div>
+
+  <script>
+  myVotingChannel2d.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+      choiceSixteen++;
+      break;
+    case "2":
+      choiceSeventeen++;
+      break;
+    case "3":
+      choiceEighteen++;
+      break;
+    case "4":
+      choiceNineteen++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart2d"].setJSONData({
+    chart: {
+      caption: "ชัยชนะชั่วครู่",
+      subCaption: "ไปไหนต่อ?",
+      theme: "fusion",
+    },
+    data: [
+      {
+        label: "TERMINAL P-89",
+        value: choiceSixteen,
+      },
+      {
+        label: "ELYSIUM IX/XI",
+        value: choiceSeventeen,
+      },
+      {
+        label: "เดินทางผ่านรูหนอน",
+        value: choiceEighteen,
+      },
+      {
+        label: "High-Frequency Zone",
+        value: choiceNineteen,
+      },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts2d = new FusionCharts(chartConfig2d);
+  fusioncharts2d.render();
+});
+      </script>
+
+  </body>
+</html>

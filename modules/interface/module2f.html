@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 2g-2</title>
+    <title>Module 2f</title>
     <link rel="stylesheet1" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet2" href="style.css" />
     <link rel="stylesheet3" href="https://fonts.googleapis.com/css?family=Kanit">
@@ -13,7 +13,7 @@
         body {
           background-color: #687296;
         }
-
+        
         h1 {
         font-size: 30px;
         font-family: Kanit, sans-serif;
@@ -25,7 +25,7 @@
         }
 
         h4 {
-        font-size: 18px;
+        font-size: 25px;
         font-family: Kanit, sans-serif;
         }
 
@@ -43,38 +43,36 @@
         text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke;
         }
 
-        .w3-button1{ color: #ffeedc;}
-        .w3-button2{ color: #8df8ff;font-size: 45px;}
-        .w3-button3{ color: #000000;font-size: 30px;}
+        .w3-button1{ color: #87cdee;}
+        .w3-button2{ color: #efaeae; font-size: 45px;}
+
     </style>
 </head>
 <body>
     <div class = content>
         <div style="text-align: center; padding: 10%; font-family: kanit, sans-serif; text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke">
             
-            <h1 style="color: #f5eced">ALGORITHM PROCESSING</h1>
-            <h3 style="color: #f5eced">"การปลอบโยน"</h3>
-            <h4 style="color: #f5eced">SOLO กำลังเศร้า ใครควรจะปลอบเขา?</h4>
-            <br>
-            <button id="cc-btn" type="button" class="w3-button w3-button1 w3-border w3-round-large w3-ripple" onclick="castVote('1')">SYNTH</button>
-            <br>
-            <br>
-            <button id="tt-btn" type="button" class="w3-button w3-button2 w3-border w3-round-large w3-ripple" onclick="castVote('2')">TONIC</button>
-            <br>
-            <br>
-            <button id="bb-btn" type="button" class="w3-button w3-button3 w3-border w3-round-large w3-ripple" onclick="castVote('3')">ไม่เลือกใครเลย</button>
+              <h1 style="color: #f5eced">ALGORITHM PROCESSING</h1>
+              <br>
+                <h3 style="color: #f5eced">"Savior"</h3>
+                <h4 style="color: #f5eced">รับ TONIC ขึ้น Launch ดีหรือไม่?</h4>
+                <br>
+                    <button id="cc-btn" type="button" class="w3-button w3-button1 w3-border w3-round-large w3-ripple" onclick="castVote('1')">รับ TONIC</button>
+                    <br>
+                    <br>
+                    <button id="tt-btn" type="button" class="w3-button w3-button2 w3-border w3-round-large w3-ripple" onclick="castVote('2')">ไม่รับ TONIC</button>
+              
+            
         </div>
     </div>
 
     <script>
-       function castVote(choice) {
+            function castVote(choice) {
             var element = document.getElementById("cc-btn");
             element.onclick = "";
             var element = document.getElementById("tt-btn");
             element.onclick = "";
-            var element = document.getElementById("bb-btn");
-            element.onclick = "";
-            myVotingChannel2g.publish("vote", choice, (err) => {
+            myVotingChannel2f.publish("vote", choice, (err) => {
                 console.log(choice);
                 console.log(err);
             });
@@ -84,3 +82,5 @@
 
 </body>
 </html>
+
+<!-- for button; class="btn btn-light btn-vote-option" -->
