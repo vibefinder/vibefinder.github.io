@@ -97,7 +97,7 @@ stageChannel.subscribe("vote", (msg) => {
     currentModule = moduleTwoF
     $("#current-module").load('./modules/interface/module2f.html');
     break;
-
+    
     case "5.1aSymph":
     currentModule = moduleFiveOneA
     $("#current-module").load('./modules/interface/module5-1aSymph.html');
