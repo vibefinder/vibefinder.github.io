@@ -26,6 +26,7 @@ let moduleZero = "waiting-room",
     moduleTwoF = "module2f",
     moduleFiveOneA = "module5.1a",
     moduleFiveOneB = "module5.1b",
+    moduleFiveTwoB = "module5.2b",
     moduleTrading = "module-trading";
 
 let choiceOne = 0,
@@ -397,11 +398,11 @@ data: chartData2f,
 // Preparing the chart data
 let chartData51a = [
   {
-    label: "Dr.SYMPH สำรวจ",
+    label: "Dr.SYMPH/SYNTH สำรวจ",
     value: choiceTwentyFour,
   },
   {
-    label: "Dr.SYMPH อยู่บนยาน",
+    label: "Dr.SYMPH/SYNTH อยู่บนยาน",
     value: choiceTwentyFive,
   },
 ];
@@ -416,7 +417,7 @@ dataFormat: "json",
 dataSource: {
 chart: {
   caption: "Terminal",
-  subCaption: "ให้ Dr. SYMPH ลงไปสำรวจดาวหรือไม่?",
+  subCaption: "ให้ Dr. SYMPH/SYNTH ลงไปสำรวจดาวหรือไม่?",
   theme: "fusion",
 },
 // Chart Data from Step 2
@@ -428,7 +429,7 @@ data: chartData51a,
 // Preparing the chart data
 let chartData51b = [
   {
-    label: "Dr.SYMPH",
+    label: "Dr.SYMPH/SYNTH",
     value: choiceTwentySix,
   },
   {
@@ -538,11 +539,19 @@ stageChannel.subscribe("vote", (msg) => {
     currentModule = moduleTwoF
     $("#current-graph").load('./modules/graph/graph2f.html');
     break;
-    case "5.1a":
+    case "5.1aSymph":
     currentModule = moduleFiveOneA
     $("#current-graph").load('./modules/graph/graph5-1a.html');
     break;
-    case "5.1b":
+    case "5.1bSymph":
+    currentModule = moduleFiveOneB
+    $("#current-graph").load('./modules/graph/graph5-1b.html');
+    break;
+    case "5.1aSynth":
+    currentModule = moduleFiveOneA
+    $("#current-graph").load('./modules/graph/graph5-1a.html');
+    break;
+    case "5.1bSynth":
     currentModule = moduleFiveOneB
     $("#current-graph").load('./modules/graph/graph5-1b.html');
     break;
