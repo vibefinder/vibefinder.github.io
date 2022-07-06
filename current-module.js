@@ -11,6 +11,10 @@ const myVotingChannel2d = realtime.channels.get("voting-channel2d");
 const myVotingChannel2e = realtime.channels.get("voting-channel2e");
 const myVotingChannel2f = realtime.channels.get("voting-channel2f");
 const myVotingChannel5 = realtime.channels.get("voting-channel5");
+const myVotingChannel63 = realtime.channels.get("voting-channel6.3");
+const myVotingChannel64 = realtime.channels.get("voting-channel6.4");
+const myVotingChannel69 = realtime.channels.get("voting-channel6.9");
+const myVotingChannel7 = realtime.channels.get("voting-channel7");
 const myVotingChannelBTC = realtime.channels.get("voting-BTC");
 
 // var events = require('events');
@@ -30,6 +34,10 @@ let moduleZero = "waiting-room",
     moduleFiveOneA = "module5.1a",
     moduleFiveOneB = "module5.1b",
     moduleFiveTwoB = "module5.2b",
+    moduleSixThree = "module6.3",
+    moduleSixFour = "module6.4",
+    moduleSixNine = "module6.9",
+    moduleSeven = "module7",
     moduleTrading = "module-trading";
 
 // let currentHTML = require('./modules/interface/module1.html');
@@ -97,7 +105,7 @@ stageChannel.subscribe("vote", (msg) => {
     currentModule = moduleTwoF
     $("#current-module").load('./modules/interface/module2f.html');
     break;
-    
+
     case "5.1aSymph":
     currentModule = moduleFiveOneA
     $("#current-module").load('./modules/interface/module5-1aSymph.html');
@@ -121,6 +129,26 @@ stageChannel.subscribe("vote", (msg) => {
     case "5.2b":
     currentModule = moduleFiveTwoB
     $("#current-module").load('./modules/interface/module5-2b.html');
+    break;
+
+    case "6.3":
+    currentModule = moduleSixThree
+    $("#current-module").load('./modules/interface/module6-3.html');
+    break;
+
+    case "6.4":
+    currentModule = moduleSixFour
+    $("#current-module").load('./modules/interface/module6-4.html');
+    break;
+
+    case "6.9":
+    currentModule = moduleSixNine
+    $("#current-module").load('./modules/interface/module6-9.html');
+    break;
+
+    case "7":
+    currentModule = moduleSeven
+    $("#current-module").load('./modules/interface/module7.html');
     break;
   }
   console.log(currentModule);

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 6.4 results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 6.4 will load here!</div>
+
+  <script>
+  myVotingChannel64.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+    choiceThirtyTwo++;
+      break;
+    case "2":
+    choiceThirtyThree++;
+      break;
+    case "3":
+    choiceThirtyFour++;
+    break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart6.4"].setJSONData({
+    chart: {
+      caption: "The Hard Choices",
+      subCaption: "รับ MINOR มาด้วยกันหรือไม่?",
+      theme: "fusion",
+    },
+    data: [
+    {
+    label: "รับ MINOR ไปด้วยกัน",
+    value: choiceThirtyTwo,
+    },
+    {
+    label: "รับ MINOR และทิ้ง TONIC",
+    value: choiceThirtyThree,
+    },
+    {
+    label: "ฆ่า MINOR",
+    value: choiceThirtyFour,
+    },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts64 = new FusionCharts(chartConfig64);
+  fusioncharts64.render();
+});
+      </script>
+
+  </body>
+</html>
