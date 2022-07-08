@@ -11,6 +11,10 @@ const myVotingChannel2d = realtime.channels.get("voting-channel2d");
 const myVotingChannel2e = realtime.channels.get("voting-channel2e");
 const myVotingChannel2f = realtime.channels.get("voting-channel2f");
 const myVotingChannel5 = realtime.channels.get("voting-channel5");
+const myVotingChannel63 = realtime.channels.get("voting-channel6.3");
+const myVotingChannel64 = realtime.channels.get("voting-channel6.4");
+const myVotingChannel69 = realtime.channels.get("voting-channel6.9");
+const myVotingChannel7 = realtime.channels.get("voting-channel7");
 const myVotingChannelBTC = realtime.channels.get("voting-BTC");
 
 let moduleZero = "waiting-room",
@@ -27,6 +31,10 @@ let moduleZero = "waiting-room",
     moduleFiveOneA = "module5.1a",
     moduleFiveOneB = "module5.1b",
     moduleFiveTwoB = "module5.2b",
+    moduleSixThree = "module6.3",
+    moduleSixFour = "module6.4",
+    moduleSixNine = "module6.9",
+    moduleSeven = "module7",
     moduleTrading = "module-trading";
 
 let choiceOne = 0,
@@ -58,6 +66,15 @@ let choiceOne = 0,
     choiceTwentySeven = 0,
     choiceTwentyEight = 0,
     choiceTwentyNine = 0,
+    choiceThirty = 0,
+    choiceThirtyOne = 0,
+    choiceThirtyTwo = 0,
+    choiceThirtyThree = 0,
+    choiceThirtyFour = 0,
+    choiceThirtyFive = 0,
+    choiceThirtySix = 0,
+    choiceThirtySeven = 0,
+    choiceThirtyEight = 0,
 
     choiceBuy = 0,
     choiceSell = 0;
@@ -487,6 +504,134 @@ data: chartData52b,
 },
 };
 
+// chart 6.3
+// Preparing the chart data
+let chartData63 = [
+  {
+    label: "ไป High Frequency Zone",
+    value: choiceThirty,
+  },
+  {
+    label: "กลับบ้าน",
+    value: choiceThirtyOne,
+  },
+];
+// Chart Configuration
+let chartConfig63 = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart6.3",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Crossroad",
+  subCaption: "อยากไปต่อ หรือกลับบ้าน?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData63,
+},
+};
+
+// chart 6.4
+// Preparing the chart data
+let chartData64 = [
+  {
+    label: "รับ MINOR ไปด้วยกัน",
+    value: choiceThirtyTwo,
+  },
+  {
+    label: "รับ MINOR และทิ้ง TONIC",
+    value: choiceThirtyThree,
+  },
+  {
+    label: "ฆ่า MINOR",
+    value: choiceThirtyFour,
+  },
+];
+// Chart Configuration
+let chartConfig64 = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart6.4",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "The Hard Choices",
+  subCaption: "รับ MINOR มาด้วยกันหรือไม่?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData64,
+},
+};
+
+// chart 6.9
+// Preparing the chart data
+let chartData69 = [
+  {
+    label: "กลับบ้าน",
+    value: choiceThirtyFive,
+  },
+  {
+    label: "ช่วยพ่อ TONIC",
+    value: choiceThirtySix,
+  },
+];
+// Chart Configuration
+let chartConfig69 = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart6.9",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Where is your VIBE",
+  subCaption: "The Vibe ของคุณอยู่ที่ไหน?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData69,
+},
+};
+
+// chart 7
+// Preparing the chart data
+let chartData7 = [
+  {
+    label: "สู้",
+    value: choiceThirtySeven,
+  },
+  {
+    label: "ยอมแพ้",
+    value: choiceThirtyEight,
+  },
+];
+// Chart Configuration
+let chartConfig7 = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart7",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "General's Launch Approaching",
+  subCaption: "จะสู้หรือยอมแพ้?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData7,
+},
+};
+
 // end
 
 stageChannel.subscribe("vote", (msg) => {
@@ -558,6 +703,22 @@ stageChannel.subscribe("vote", (msg) => {
     case "5.2b":
     currentModule = moduleFiveTwoB
     $("#current-graph").load('./modules/graph/graph5-2b.html');
+    break;
+    case "6.3":
+    currentModule = moduleSixThree
+    $("#current-graph").load('./modules/graph/graph6-3.html');
+    break;
+    case "6.4":
+    currentModule = moduleSixFour
+    $("#current-graph").load('./modules/graph/graph6-4.html');
+    break;
+    case "6.9":
+    currentModule = moduleSixNine
+    $("#current-graph").load('./modules/graph/graph6-9.html');
+    break;
+    case "7":
+    currentModule = moduleSeven
+    $("#current-graph").load('./modules/graph/graph7.html');
     break;
   }
   console.log(currentModule);

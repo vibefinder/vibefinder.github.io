@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 7 results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 7 will load here!</div>
+
+  <script>
+  myVotingChannel7.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+    choiceThirtySeven++;
+      break;
+    case "2":
+    choiceThirtyEight++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart7"].setJSONData({
+    chart: {
+        caption: "General's Launch Approaching",
+        subCaption: "จะสู้หรือยอมแพ้?",
+        theme: "fusion",
+    },
+    data: [
+    {
+    label: "สู้",
+    value: choiceThirtySeven,
+    },
+    {
+    label: "ยอมแพ้",
+    value: choiceThirtyEight,
+    },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts7 = new FusionCharts(chartConfig7);
+  fusioncharts7.render();
+});
+      </script>
+
+  </body>
+</html>
