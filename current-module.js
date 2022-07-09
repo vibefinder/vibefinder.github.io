@@ -27,6 +27,7 @@ let moduleZero = "waiting-room",
     moduleThreeB = "module3b",
     moduleTwoGOne = "module2g-1",
     moduleTwoGTwo = "module2g-2",
+    moduleTwoD = "module2d",
     moduleTwoDSymph = "module2d-symph",
     moduleTwoDSynth = "module2d-synth",
     moduleTwoE = "module2e",
@@ -84,6 +85,11 @@ stageChannel.subscribe("vote", (msg) => {
     case "btc":
     currentModule = moduleTrading
     $("#current-module").load('./modules/interface/trading.html');
+    break;
+
+    case "2d":
+    currentModule = moduleTwoD
+    $("#current-module").load('./modules/interface/module2d.html');
     break;
 
     case "2d-symph":

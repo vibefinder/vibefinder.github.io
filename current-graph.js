@@ -668,6 +668,9 @@ stageChannel.subscribe("vote", (msg) => {
     currentModule = moduleTrading
     $("#current-graph").load('./modules/graph/trading.html');
     break;
+    case "2d":
+    currentModule = moduleTwoD
+    $("#current-graph").load('./modules/graph/graph2d.html');
     case "2d-symph":
     currentModule = moduleTwoDSymph
     $("#current-graph").load('./modules/graph/graph2d.html');
