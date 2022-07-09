@@ -26,6 +26,7 @@ let moduleZero = "waiting-room",
     moduleThreeB = "module3b",
     moduleTwoGOne = "module2g-1",
     moduleTwoGTwo = "module2g-2",
+    moduleTwoD = "module2d",
     moduleTwoDSymph = "module2d-symph",
     moduleTwoDSynth = "module2d-synth",
     moduleTwoE = "module2e",
@@ -334,7 +335,7 @@ let chartData2d = [
     value: choiceEighteen,
   },
   {
-    label: "High-Frequency Zone",
+    label: "อ้อมรูหนอน",
     value: choiceNineteen,
   },
 ];
@@ -741,6 +742,7 @@ stageChannel.subscribe("vote", (msg) => {
     case "2d":
     currentModule = moduleTwoD
     $("#current-graph").load('./modules/graph/graph2d.html');
+    break;
     case "2d-symph":
     currentModule = moduleTwoDSymph
     $("#current-graph").load('./modules/graph/graph2d.html');
