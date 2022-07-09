@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Module 6.9 synth results</title>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"
+    ></script>
+  </head>
+  <body>
+    <div id="chart-container">Graph 6.9 will load here!</div>
+
+  <script>
+  myVotingChannel69Synth.subscribe("vote", (msg) => {
+  switch (msg.data) {
+    case "1":
+    choiceFourtyOne++;
+      break;
+    case "2":
+    choiceFourtyTwo++;
+      break;
+    default:
+      console.log("something broke, it wasnt me");
+  }
+  updateChartData();
+});
+
+function updateChartData() {
+  FusionCharts.items["vote-chart6.9synth"].setJSONData({
+    chart: {
+        caption: "Where is your VIBE",
+        subCaption: "The Vibe ของคุณอยู่ที่ไหน?",
+        theme: "fusion",
+    },
+    data: [
+    {
+    label: "กลับบ้าน",
+    value: choiceFourtyOne,
+    },
+    {
+    label: "พา SYNTH ไปดาว CENTURA",
+    value: choiceFourtyTwo,
+    },
+    ],
+  });
+}
+
+FusionCharts.ready(() => {
+  let fusioncharts69Synth = new FusionCharts(chartConfig69Synth);
+  fusioncharts69Synth.render();
+});
+      </script>
+
+  </body>
+</html>

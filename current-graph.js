@@ -14,6 +14,8 @@ const myVotingChannel5 = realtime.channels.get("voting-channel5");
 const myVotingChannel63 = realtime.channels.get("voting-channel6.3");
 const myVotingChannel64 = realtime.channels.get("voting-channel6.4");
 const myVotingChannel69 = realtime.channels.get("voting-channel6.9");
+const myVotingChannel69Symph = realtime.channels.get("voting-channel6.9symph");
+const myVotingChannel69Synth = realtime.channels.get("voting-channel6.9synth");
 const myVotingChannel7 = realtime.channels.get("voting-channel7");
 const myVotingChannelBTC = realtime.channels.get("voting-BTC");
 
@@ -34,6 +36,8 @@ let moduleZero = "waiting-room",
     moduleSixThree = "module6.3",
     moduleSixFour = "module6.4",
     moduleSixNine = "module6.9",
+    moduleSixNineSymph = "module6.9symph",
+    moduleSixNineSynth = "module6.9synth",
     moduleSeven = "module7",
     moduleTrading = "module-trading";
 
@@ -75,6 +79,10 @@ let choiceOne = 0,
     choiceThirtySix = 0,
     choiceThirtySeven = 0,
     choiceThirtyEight = 0,
+    choiceThirtyNine = 0,
+    choiceFourty = 0,
+    choiceFourtyOne = 0,
+    choiceFourtyTwo = 0,
 
     choiceBuy = 0,
     choiceSell = 0;
@@ -601,6 +609,68 @@ data: chartData69,
 },
 };
 
+// chart 6.9 Symph
+// Preparing the chart data
+let chartData69Symph = [
+  {
+    label: "กลับบ้าน",
+    value: choiceThirtyNine,
+  },
+  {
+    label: "พา SYMPH ไปรักษา",
+    value: choiceFourty,
+  },
+];
+// Chart Configuration
+let chartConfig69Symph = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart6.9symph",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Where is your VIBE",
+  subCaption: "The Vibe ของคุณอยู่ที่ไหน?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData69Symph,
+},
+};
+
+// chart 6.9 Synth
+// Preparing the chart data
+let chartData69Synth = [
+  {
+    label: "กลับบ้าน",
+    value: choiceFourtyOne,
+  },
+  {
+    label: "พา SYNTH ไปดาว CENTURA",
+    value: choiceFourtyTwo,
+  },
+];
+// Chart Configuration
+let chartConfig69Synth = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart6.9synth",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "Where is your VIBE",
+  subCaption: "The Vibe ของคุณอยู่ที่ไหน?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData69Synth,
+},
+};
+
 // chart 7
 // Preparing the chart data
 let chartData7 = [
@@ -718,6 +788,14 @@ stageChannel.subscribe("vote", (msg) => {
     case "6.9":
     currentModule = moduleSixNine
     $("#current-graph").load('./modules/graph/graph6-9.html');
+    break;
+    case "6.9Symph":
+    currentModule = moduleSixNineSymph
+    $("#current-graph").load('./modules/graph/graph6-9symph.html');
+    break;
+    case "6.9Synth":
+    currentModule = moduleSixNineSynth
+    $("#current-graph").load('./modules/graph/graph6-9synth.html');
     break;
     case "7":
     currentModule = moduleSeven

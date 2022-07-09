@@ -14,6 +14,8 @@ const myVotingChannel5 = realtime.channels.get("voting-channel5");
 const myVotingChannel63 = realtime.channels.get("voting-channel6.3");
 const myVotingChannel64 = realtime.channels.get("voting-channel6.4");
 const myVotingChannel69 = realtime.channels.get("voting-channel6.9");
+const myVotingChannel69Symph = realtime.channels.get("voting-channel6.9symph");
+const myVotingChannel69Synth = realtime.channels.get("voting-channel6.9synth");
 const myVotingChannel7 = realtime.channels.get("voting-channel7");
 const myVotingChannelBTC = realtime.channels.get("voting-BTC");
 
@@ -38,6 +40,8 @@ let moduleZero = "waiting-room",
     moduleSixThree = "module6.3",
     moduleSixFour = "module6.4",
     moduleSixNine = "module6.9",
+    moduleSixNineSymph = "module6.9symph",
+    moduleSixNineSynth = "module6.9synth",
     moduleSeven = "module7",
     moduleTrading = "module-trading";
 
@@ -150,6 +154,16 @@ stageChannel.subscribe("vote", (msg) => {
     case "6.9":
     currentModule = moduleSixNine
     $("#current-module").load('./modules/interface/module6-9.html');
+    break;
+
+    case "6.9Symph":
+    currentModule = moduleSixNineSymph
+    $("#current-module").load('./modules/interface/module6-9symph.html');
+    break;
+
+    case "6.9Synth":
+    currentModule = moduleSixNineSynth
+    $("#current-module").load('./modules/interface/module6-9synth.html');
     break;
 
     case "7":
