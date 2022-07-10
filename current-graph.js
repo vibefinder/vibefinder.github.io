@@ -13,6 +13,7 @@ const myVotingChannel2f = realtime.channels.get("voting-channel2f");
 const myVotingChannel5 = realtime.channels.get("voting-channel5");
 const myVotingChannel63 = realtime.channels.get("voting-channel6.3");
 const myVotingChannel64 = realtime.channels.get("voting-channel6.4");
+const myVotingChannel64B = realtime.channels.get("voting-channel6.4b");
 const myVotingChannel69 = realtime.channels.get("voting-channel6.9");
 const myVotingChannel69Symph = realtime.channels.get("voting-channel6.9symph");
 const myVotingChannel69Synth = realtime.channels.get("voting-channel6.9synth");
@@ -36,6 +37,7 @@ let moduleZero = "waiting-room",
     moduleFiveTwoB = "module5.2b",
     moduleSixThree = "module6.3",
     moduleSixFour = "module6.4",
+    moduleSixFourB = "module6.4b",
     moduleSixNine = "module6.9",
     moduleSixNineSymph = "module6.9symph",
     moduleSixNineSynth = "module6.9synth",
@@ -579,6 +581,37 @@ data: chartData64,
 },
 };
 
+// chart 6.4b
+// Preparing the chart data
+let chartData64B = [
+  {
+    label: "รับ MINOR ไปด้วยกัน",
+    value: choiceThirtyTwo,
+  },
+  {
+    label: "ฆ่า MINOR",
+    value: choiceThirtyFour,
+  },
+];
+// Chart Configuration
+let chartConfig64B = {
+type: "pie2d",
+renderAt: "chart-container",
+id: "vote-chart6.4b",
+width: "100%",
+height: "400",
+dataFormat: "json",
+dataSource: {
+chart: {
+  caption: "The Hard Choices",
+  subCaption: "รับ MINOR มาด้วยกันหรือไม่?",
+  theme: "fusion",
+},
+// Chart Data from Step 2
+data: chartData64B,
+},
+};
+
 // chart 6.9
 // Preparing the chart data
 let chartData69 = [
@@ -786,6 +819,10 @@ stageChannel.subscribe("vote", (msg) => {
     case "6.4":
     currentModule = moduleSixFour
     $("#current-graph").load('./modules/graph/graph6-4.html');
+    break;
+    case "6.4b":
+    currentModule = moduleSixFourB
+    $("#current-graph").load('./modules/graph/graph6-4b.html');
     break;
     case "6.9":
     currentModule = moduleSixNine

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6.4b</title>
+    <link rel="stylesheet1" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet2" href="style.css" />
+    <link rel="stylesheet3" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+          background-color: #687296;
+        }
+
+        h1 {
+        font-size: 30px;
+        font-family: Kanit, sans-serif;
+        }
+
+        h3 {
+        font-size: 25px;
+        font-family: Kanit, sans-serif;
+        }
+
+        h4 {
+        font-size: 20px;
+        font-family: Kanit, sans-serif;
+        }
+
+        p {
+        font-size: 35px;
+        }
+
+        .w3-button {
+        border: white;
+        font-size: 30px;
+        text-align: center;
+        display: inline-block;
+        background-color: #87cdee00;
+        font-family: kanit, sans-serif;
+        text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke;
+        }
+
+        .w3-button1{ color: #adf7ad;font-size: 30px;}
+        .w3-button2{ color: #aed5ef;font-size: 30px;}
+        .w3-button3{ color: #efaeae;font-size: 30px;}
+    </style>
+</head>
+<body>
+    <div class = content>
+        <div style="text-align: center; padding: 10%; font-family: kanit, sans-serif; text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke">
+            
+            <h1 style="color: #f5eced">ALGORITHM PROCESSING</h1>
+            <br>
+            <h3 style="color: #f5eced">"The Hard Choice"</h3>
+            <h4 style="color: #f5eced">รับ MINOR มาด้วยกันหรือไม่?</h4>
+            <br>
+            <button id="cc-btn" type="button" class="w3-button w3-button1 w3-border w3-round-large w3-ripple" onclick="castVote('1')">รับ MINOR มาด้วยกัน</button>
+            <br>
+            <br>
+            <button id="mm-btn" type="button" class="w3-button w3-button3 w3-border w3-round-large w3-ripple" onclick="castVote('3')">ฆ่า MINOR</button>
+        </div>
+    </div>
+
+    <script>
+       function castVote(choice) {
+            var element = document.getElementById("cc-btn");
+            element.onclick = "";
+            var element = document.getElementById("mm-btn");
+            element.onclick = "";
+            myVotingChannel64B.publish("vote", choice, (err) => {
+                console.log(choice);
+                console.log(err);
+            });
+            }
+        console.log("button pressed")
+    </script>
+
+</body>
+</html>
