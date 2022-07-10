@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 2d SYNTH</title>
+    <title>Module 2d</title>
     <link rel="stylesheet1" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet2" href="style.css" />
     <link rel="stylesheet3" href="https://fonts.googleapis.com/css?family=Kanit">
@@ -43,7 +43,7 @@
         text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke;
         }
 
-        .w3-button1{ color: #ccffcc;font: 30px;}
+        .w3-button1{ color: #ccffcc;}
         .w3-button2{ color: #8df8ff;font-size: 30px;}
         .w3-button3{ color: #000000;font-size: 30px;}
     </style>
@@ -56,9 +56,6 @@
             <h3 style="color: #f5eced">"ชัยชนะชั่วครู่"</h3>
             <h4 style="color: #f5eced">ไปไหนต่อ?</h4>
             <br>
-            <button id="cc-btn" type="button" class="w3-button w3-button1 w3-border w3-round-large w3-ripple" onclick="castVote('2')">ELYSIUM IX/XI</button>
-            <br>
-            <br>
             <button id="tt-btn" type="button" class="w3-button w3-button2 w3-border w3-round-large w3-ripple" onclick="castVote('3')">เดินทางผ่านรูหนอน</button>
             <br>
             <br>
@@ -69,8 +66,6 @@
 
     <script>
        function castVote(choice) {
-            var element = document.getElementById("cc-btn");
-            element.onclick = "";
             var element = document.getElementById("tt-btn");
             element.onclick = "";
             var element = document.getElementById("bb-btn");

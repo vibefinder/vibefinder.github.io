@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Module 2d SYNTH</title>
+    <title>Module 6.9 Symph</title>
     <link rel="stylesheet1" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet2" href="style.css" />
     <link rel="stylesheet3" href="https://fonts.googleapis.com/css?family=Kanit">
@@ -25,17 +25,17 @@
         }
 
         h4 {
-        font-size: 18px;
+        font-size: 20px;
         font-family: Kanit, sans-serif;
         }
 
         p {
-        font-size: 40px;
+        font-size: 35px;
         }
 
         .w3-button {
         border: white;
-        font-size: 40px;
+        font-size: 30px;
         text-align: center;
         display: inline-block;
         background-color: #87cdee00;
@@ -43,9 +43,8 @@
         text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke;
         }
 
-        .w3-button1{ color: #ccffcc;font: 30px;}
-        .w3-button2{ color: #8df8ff;font-size: 30px;}
-        .w3-button3{ color: #000000;font-size: 30px;}
+        .w3-button1{ color: #7fcff4;}
+        .w3-button2{ color: #f5eda1;font-size: 30px;}
     </style>
 </head>
 <body>
@@ -53,17 +52,14 @@
         <div style="text-align: center; padding: 10%; font-family: kanit, sans-serif; text-shadow: 1px 1px 2px gray, 0 0 25px white, 0 0 5px whitesmoke">
             
             <h1 style="color: #f5eced">ALGORITHM PROCESSING</h1>
-            <h3 style="color: #f5eced">"ชัยชนะชั่วครู่"</h3>
-            <h4 style="color: #f5eced">ไปไหนต่อ?</h4>
             <br>
-            <button id="cc-btn" type="button" class="w3-button w3-button1 w3-border w3-round-large w3-ripple" onclick="castVote('2')">ELYSIUM IX/XI</button>
+            <h3 style="color: #f5eced">"Where is your VIBE"</h3>
+            <h4 style="color: #f5eced">The Vibe ของคุณอยู่ที่ไหน?</h4>
             <br>
-            <br>
-            <button id="tt-btn" type="button" class="w3-button w3-button2 w3-border w3-round-large w3-ripple" onclick="castVote('3')">เดินทางผ่านรูหนอน</button>
+            <button id="cc-btn" type="button" class="w3-button w3-button1 w3-border w3-round-large w3-ripple" onclick="castVote('1')">กลับบ้าน</button>
             <br>
             <br>
-            <button id="bb-btn" type="button" class="w3-button w3-button3 w3-border w3-round-large w3-ripple" onclick="castVote('4')">อ้อมรูหนอน</button>
-
+            <button id="tt-btn" type="button" class="w3-button w3-button2 w3-border w3-round-large w3-ripple" onclick="castVote('2')">พา SYMPH ไปรักษา</button>
         </div>
     </div>
 
@@ -73,9 +69,7 @@
             element.onclick = "";
             var element = document.getElementById("tt-btn");
             element.onclick = "";
-            var element = document.getElementById("bb-btn");
-            element.onclick = "";
-            myVotingChannel2d.publish("vote", choice, (err) => {
+            myVotingChannel69Symph.publish("vote", choice, (err) => {
                 console.log(choice);
                 console.log(err);
             });

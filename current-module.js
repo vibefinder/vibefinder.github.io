@@ -13,7 +13,10 @@ const myVotingChannel2f = realtime.channels.get("voting-channel2f");
 const myVotingChannel5 = realtime.channels.get("voting-channel5");
 const myVotingChannel63 = realtime.channels.get("voting-channel6.3");
 const myVotingChannel64 = realtime.channels.get("voting-channel6.4");
+const myVotingChannel64B = realtime.channels.get("voting-channel6.4b");
 const myVotingChannel69 = realtime.channels.get("voting-channel6.9");
+const myVotingChannel69Symph = realtime.channels.get("voting-channel6.9symph");
+const myVotingChannel69Synth = realtime.channels.get("voting-channel6.9synth");
 const myVotingChannel7 = realtime.channels.get("voting-channel7");
 const myVotingChannelBTC = realtime.channels.get("voting-BTC");
 
@@ -27,6 +30,7 @@ let moduleZero = "waiting-room",
     moduleThreeB = "module3b",
     moduleTwoGOne = "module2g-1",
     moduleTwoGTwo = "module2g-2",
+    moduleTwoD = "module2d",
     moduleTwoDSymph = "module2d-symph",
     moduleTwoDSynth = "module2d-synth",
     moduleTwoE = "module2e",
@@ -36,7 +40,10 @@ let moduleZero = "waiting-room",
     moduleFiveTwoB = "module5.2b",
     moduleSixThree = "module6.3",
     moduleSixFour = "module6.4",
+    moduleSixFourB = "module6.4b",
     moduleSixNine = "module6.9",
+    moduleSixNineSymph = "module6.9symph",
+    moduleSixNineSynth = "module6.9synth",
     moduleSeven = "module7",
     moduleTrading = "module-trading";
 
@@ -84,6 +91,11 @@ stageChannel.subscribe("vote", (msg) => {
     case "btc":
     currentModule = moduleTrading
     $("#current-module").load('./modules/interface/trading.html');
+    break;
+
+    case "2d":
+    currentModule = moduleTwoD
+    $("#current-module").load('./modules/interface/module2d.html');
     break;
 
     case "2d-symph":
@@ -137,8 +149,13 @@ stageChannel.subscribe("vote", (msg) => {
     break;
 
     case "6.4":
-    currentModule = moduleSixFour
+    currentModule = moduleSixFourB
     $("#current-module").load('./modules/interface/module6-4.html');
+    break;
+
+    case "6.4b":
+    currentModule = moduleSixFour
+    $("#current-module").load('./modules/interface/module6-4b.html');
     break;
 
     case "6.9":
@@ -146,9 +163,27 @@ stageChannel.subscribe("vote", (msg) => {
     $("#current-module").load('./modules/interface/module6-9.html');
     break;
 
+    case "6.9Symph":
+    currentModule = moduleSixNineSymph
+    $("#current-module").load('./modules/interface/module6-9symph.html');
+    break;
+
+    case "6.9Synth":
+    currentModule = moduleSixNineSynth
+    $("#current-module").load('./modules/interface/module6-9synth.html');
+    break;
+
     case "7":
     currentModule = moduleSeven
     $("#current-module").load('./modules/interface/module7.html');
+    break;
+
+    case "chat-on":
+    document.getElementById('open-chat').style.display='initial';
+    break;
+
+    case "chat-off":
+    document.getElementById('open-chat').style.display='none';
     break;
   }
   console.log(currentModule);
