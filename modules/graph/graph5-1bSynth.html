@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Module 2 results</title>
+    <title>Module 5.1b results</title>
     <script
       type="text/javascript"
       src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
@@ -17,22 +17,16 @@
     ></script>
   </head>
   <body>
-    <div id="chart-container">Graph 2 will load here!</div>
+    <div id="chart-container">Graph 5.1b will load here!</div>
 
   <script>
-  myVotingChannel2.subscribe("vote", (msg) => {
+  myVotingChannel5.subscribe("vote", (msg) => {
   switch (msg.data) {
     case "1":
-      choiceThree++;
+    choiceTwentySix++;
       break;
     case "2":
-      choiceFour++;
-      break;
-    case "3":
-      choiceFive++;
-      break;
-    case "4":
-      choiceFour++;
+    choiceTwentySeven++;
       break;
     default:
       console.log("something broke, it wasnt me");
@@ -41,32 +35,28 @@
 });
 
 function updateChartData() {
-  FusionCharts.items["vote-chart2"].setJSONData({
+  FusionCharts.items["vote-chart5.1b"].setJSONData({
     chart: {
-      caption: "จุดหมายต่อไปคือที่ใด?",
-      subCaption: "Earth หรือ Tau Ceti G หรือ High Frequency Zone?",
+      caption: "Terminal",
+      subCaption: "ให้ใครลงไปสำรวจดาว?",
       theme: "fusion",
     },
     data: [
-      {
-        label: "Earth",
-        value: choiceThree,
-      },
-      {
-        label: "Tau Ceti G",
-        value: choiceFour,
-      },
-      {
-        label: "High-Frequency Zone",
-        value: choiceFive,
-      },
+        {
+        label: "SYNTH",
+        value: choiceTwentySix,
+        },
+        {
+        label: "TONIC",
+        value: choiceTwentySeven,
+        },
     ],
   });
 }
 
 FusionCharts.ready(() => {
-  let fusioncharts2 = new FusionCharts(chartConfig2);
-  fusioncharts2.render();
+  let fusioncharts51b = new FusionCharts(chartConfig51b);
+  fusioncharts51b.render();
 });
       </script>
 

@@ -6,7 +6,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Module 5.1a results</title>
+    <title>Module 5.1b results</title>
     <script
       type="text/javascript"
       src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"
@@ -17,16 +17,16 @@
     ></script>
   </head>
   <body>
-    <div id="chart-container">Graph 5.1a will load here!</div>
+    <div id="chart-container">Graph 5.1b will load here!</div>
 
   <script>
   myVotingChannel5.subscribe("vote", (msg) => {
   switch (msg.data) {
     case "1":
-      choiceTwentyFour++;
+    choiceTwentySix++;
       break;
     case "2":
-      choiceTwentyFive++;
+    choiceTwentySeven++;
       break;
     default:
       console.log("something broke, it wasnt me");
@@ -35,28 +35,28 @@
 });
 
 function updateChartData() {
-  FusionCharts.items["vote-chart5.1a"].setJSONData({
+  FusionCharts.items["vote-chart5.1b"].setJSONData({
     chart: {
       caption: "Terminal",
-      subCaption: "ให้ Dr. SYMPH/SYNTH ลงไปสำรวจดาวหรือไม่?",
+      subCaption: "ให้ใครลงไปสำรวจดาว?",
       theme: "fusion",
     },
     data: [
-    {
-    label: "Dr.SYMPH/SYNTH สำรวจ",
-    value: choiceTwentyFour,
-  },
-  {
-    label: "Dr.SYNTH อยู่บนยาน",
-    value: choiceTwentyFive,
-  },
+        {
+        label: "Dr.SYMPH",
+        value: choiceTwentySix,
+        },
+        {
+        label: "TONIC",
+        value: choiceTwentySeven,
+        },
     ],
   });
 }
 
 FusionCharts.ready(() => {
-  let fusioncharts51a = new FusionCharts(chartConfig51a);
-  fusioncharts51a.render();
+  let fusioncharts51b = new FusionCharts(chartConfig51b);
+  fusioncharts51b.render();
 });
       </script>
 
