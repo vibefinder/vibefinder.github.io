@@ -177,6 +177,14 @@ stageChannel.subscribe("vote", (msg) => {
     currentModule = moduleSeven
     $("#current-module").load('./modules/interface/module7.html');
     break;
+
+    case "chat-on":
+    document.getElementById('open-chat').style.display='initial';
+    break;
+
+    case "chat-off":
+    document.getElementById('open-chat').style.display='none';
+    break;
   }
   console.log(currentModule);
   console.log(currentHTML);
