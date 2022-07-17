@@ -185,6 +185,14 @@ stageChannel.subscribe("vote", (msg) => {
     case "chat-off":
     document.getElementById('open-chat').style.display='none';
     break;
+
+    case "graph-on":
+    document.getElementById('graph').style.display='initial';
+    break;
+
+    case "graph-off":
+    document.getElementById('graph').style.display='none';
+    break;
   }
   console.log(currentModule);
   console.log(currentHTML);

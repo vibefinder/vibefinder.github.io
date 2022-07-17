@@ -794,19 +794,19 @@ stageChannel.subscribe("vote", (msg) => {
     break;
     case "5.1aSymph":
     currentModule = moduleFiveOneA
-    $("#current-graph").load('./modules/graph/graph5-1a.html');
+    $("#current-graph").load('./modules/graph/graph5-1aSymph.html');
     break;
     case "5.1bSymph":
     currentModule = moduleFiveOneB
-    $("#current-graph").load('./modules/graph/graph5-1b.html');
+    $("#current-graph").load('./modules/graph/graph5-1bSymph.html');
     break;
     case "5.1aSynth":
     currentModule = moduleFiveOneA
-    $("#current-graph").load('./modules/graph/graph5-1a.html');
+    $("#current-graph").load('./modules/graph/graph5-1aSynth.html');
     break;
     case "5.1bSynth":
     currentModule = moduleFiveOneB
-    $("#current-graph").load('./modules/graph/graph5-1b.html');
+    $("#current-graph").load('./modules/graph/graph5-1bSynth.html');
     break;
     case "5.2b":
     currentModule = moduleFiveTwoB
