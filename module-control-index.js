@@ -1,4 +1,4 @@
-const realtime = new Ably.Realtime({ key: "bboIFQ.58-WjQ:NC-apeYhS3cxv7wHV3wh0FIzk4_wzEV2r63ixNkXpo8" });
+const realtime = new Ably.Realtime({ key: "IyYMzQ.7zcd_g:IAky2PXxzdYDmalV2z15t0tVkjP-p-8JWuQwF0BUwiQ" });
 const stageChannel = realtime.channels.get("stage-channel");
 
 var events = require('events');
